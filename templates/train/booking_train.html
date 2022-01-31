@@ -1,0 +1,45 @@
+{% extends 'home.html' %}
+{% block content %}
+
+
+<form class="form card-body w-50 mx-auto" action="" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" placeholder="" id="" name="name">
+    </div>
+    <div>
+        <label for="">Age:</label>
+        <input type="date" class="form-control" placeholder="" id="" name="age">
+    </div> 
+    <div>
+        <label for="">Gender:</label>
+        <input type="text" class="form-control" placeholder="" id="" name="gender">
+    </div>  
+    <div>
+        <label for="">Phone Number:</label>
+        <input type="number" class="form-control" placeholder="" id="" name="phone">
+    </div>   
+    <div>
+        <label for="">From:</label>
+        <input type="text" class="form-control" id="" value="{{booking_form[0]['from']}}" name="from_">
+    </div>   
+    <div>
+        <label for="">To:</label>
+        <input type="text" class="form-control" placeholder="" id="" name="to_" value="{{booking_form[0]['to']}}">
+    </div>  
+    <div>
+        <label for="">Tickets:</label>
+        <input type="number" class="form-control" placeholder="" id="" name="ticket">
+    </div>
+    <div>
+        <label for="">flight name:</label>
+        <input type="text" class="form-control" placeholder="" id="" name="train_name" value="{{booking_form[0]['train']}}">
+    </div>  
+    <div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="" class="btn btn-dark"><a href="{{url_for('Search_train')}}" class="text-light">back</a></button>
+    </div>
+    
+</form>
+
+{% endblock %}

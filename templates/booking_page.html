@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'home.html' %}
+
+{% block content %}
+<h1>{{message}}</h1>
+<div class="card-deck mx-5">
+    <div class="card bg-primary">
+        <div class="card-body text-center">
+            <a href="{{url_for('Search_bus')}}">BUS
+                <img src="/static/image/Second-Hand-Yutong-Brand-30-32-33-35-Seats-Medium-Size-Bus-Old-Small-Bus-for-Sale.jpg"
+                    class="img-fluid" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="card bg-success">
+        <div class="card-body text-center">
+            <a href="{{url_for('Search_flight')}}">FLIGHT
+                <img src="/static/image/1595972233_1594320268_shutterstock_699697081.jpg" class="img-fluid" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="card bg-danger">
+        <div class="card-body text-center">
+            <a href="{{url_for('Search_train')}}">TRAIN
+                <img src="/static/image/indian_railway_660_122817022237_220320014030.jpg" class="img-fluid" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

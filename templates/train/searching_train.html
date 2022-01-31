@@ -1,0 +1,42 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+
+<style>
+    .height {
+        height: 50px;
+    }
+</style>
+<div class="container h-100">
+    <form action="" method="post" class="p-3 form-group d-flex justify-content-between"">
+        <div class=" form-group col-5 ">
+            <select class="form-control" id="exampleFormControlSelect1" name="from_">
+                <option></option>
+            {% for start in start_point %}
+                <option>{{start}}</option>
+            {% endfor %}
+            </select>
+        </div>
+        <div class=" form-group col-5">
+            <select class="form-control" id="exampleFormControlSelect2" name="to_">
+                <option></option>
+            {% for end in end_point %}
+                <option>{{end}}</option>
+            {% endfor %}
+            </select>
+        </div>
+        <div class=" form-group ">
+            <button type="submit" class=" btn btn-primary"> search </button>
+            <button type="" class=" btn btn-black"><a href="{{url_for('booking_page')}}">Back</a></button>
+        </div>
+    </form>
+</div>
+
+
+{% block avail %}
+
+{% endblock avail %}
+
+
+{% endblock %}

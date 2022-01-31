@@ -1,0 +1,56 @@
+{% extends 'home.html'%}
+{% block content %}
+
+<div class="card w-50 mx-auto">
+
+    <div class="card-header">Booking details</div>
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>name</td>
+                    <td>{{lists[0]['name']}}</td>
+                </tr>
+                <tr>
+                    <td>age</td>
+                    <td>{{lists[0]['age']}}</td>
+                </tr>
+                <tr>
+                    <td>gender</td>
+                    <td>{{lists[0]['gender']}}</td>
+                </tr>
+                <tr>
+                    <td>phone</td>
+                    <td>{{lists[0]['phone']}}</td>
+                </tr>
+                <tr>
+                    <td>from</td>
+                    <td>{{lists[0]['from_']}}</td>
+                </tr>
+                <tr>
+                    <td>to</td>
+                    <td>{{lists[0]['to_']}}</td>
+                </tr>
+                <tr>
+                    <td>tickets</td>
+                    <td>{{lists[0]['ticket']}}</td>
+                </tr>
+                <tr>
+                    <td>Travels name</td>
+                    <td>{{lists[0]['flight_name']}}</td>
+                </tr>
+                <tr>
+                    <td>total amount</td>
+                    <td>{{lists[0]['total_price']}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-info"><a href="{{url_for('flight_payment')}}">PAY HERE</a></button>
+        <button class="btn btn-dark"><a href="{{url_for('flight_detail',id=lists[0]['id'])}}" class="text-light">back</a></button>
+    </div>
+</div>
+
+ 
+{% endblock %}

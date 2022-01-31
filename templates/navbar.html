@@ -1,0 +1,31 @@
+{% if not login_user %}
+<div class="containers mt-4">
+    <ul class="nav justify-content-end bg-primary">
+        <li class="nav-item">
+            <a class="nav-link text-dark font-weight-bolder" href="{{url_for('login')}}">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark font-weight-bolder" href="{{url_for('result')}}">booking details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark font-weight-bolder" href="#">Register</a>
+        </li>
+    </ul>
+
+    {% else %}
+
+    <ul class="nav justify-content-end bg-primary">
+        <li class="nav-item">
+            <a class="nav-link text-dark font-weight-bolder" href="">{{name}}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark font-weight-bolder" href="{{url_for('result')}}">booking details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark font-weight-bolder" href="{{url_for('logout')}}">Logout</a>
+        </li>
+
+    </ul>
+</div>
+
+{% endif %}

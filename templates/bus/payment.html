@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+<style>
+    .form {
+        margin: 100px;
+    }
+</style>
+<div class="container">
+    <button class="btn btn-dark"><a href="{{url_for('details')}}" class="text-light">back</a></button>
+</div>
+<div class="container bg-light mt-2 p-2">
+    <form class="form card col-lg-6 w-5 col-sm-10 text-center mx-auto h-75" action="" method="POST">
+        <div class="form-group w-75 ml-5 ">
+            <label for="" class="">Card number:</label>
+            <input type="text" name="card_no" class="form-control " value="">
+        </div>
+        <div class="form-group w-75 ml-5">
+            <label for="">expire date:</label>
+            <input type="password" name="expire" class="form-control " value="">
+        </div> 
+        <div class="form-group w-75 ml-5">
+            <label for="">CVV</label>
+            <input type="password" name="cvv" class="form-control " value="">
+        </div>
+        <div class="form-group ml-5 w-75 text-center">
+            <button type="submit" class="btn btn-info ">PAY</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

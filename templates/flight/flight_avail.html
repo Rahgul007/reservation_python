@@ -1,0 +1,33 @@
+{% extends 'flight/searching_flight.html' %}
+
+{% block avail %}
+
+<div class="container">
+    {% if flight %}
+    <h2>{{count}} Available buses in this via</h2>
+    <p></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>flight</th>
+                <th>Price</th>
+                <th>Mode</th>
+            </tr>
+        </thead>
+        {% for i in flight %}
+        <tbody>
+            <tr>
+                <td>{{i['flight_name']}} flight</td>
+                <td>{{i['price']}}.Rs</td>           
+                <td>
+                    <button class="btn btn-info"><a href="{{url_for('flight_detail',id=i['id'])}}">BOOK</a></button>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    {% elif not flight %}
+    <div></div>
+    {% endif %}
+
+{% endblock avail %}

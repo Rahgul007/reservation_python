@@ -1,0 +1,33 @@
+{% extends 'train/searching_train.html' %}
+
+{% block avail %}
+
+<div class="container">
+    {% if train %}
+    <h2>{{count}} Available buses in this via</h2>
+    <p></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>train</th>
+                <th>Price</th>
+                <th>Mode</th>
+            </tr>
+        </thead>
+        {% for i in train %}
+        <tbody>
+            <tr>
+                <td>{{i['train']}} train</td>
+                <td>{{i['price']}}.Rs</td>           
+                <td>
+                    <button class="btn btn-info"><a href="{{url_for('train_detail',id=i['id'])}}">BOOK</a></button>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    {% elif not train %}
+    <div></div>
+    {% endif %}
+
+{% endblock avail %}

@@ -1,0 +1,121 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="container">
+    <button class="btn btn-dark"><a href="{{url_for('booking_page')}}" class="text-light">back</a></button>
+</div>
+
+<div class="container mt-4">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <h2> Bus Booking Details</h2>
+            </tr>
+           
+        </thead>
+
+        <tbody>
+            <tr class="bg-secondary">
+                <th>name</th>
+                <th>age</th>
+                <th>gender</th>
+                <th>phone</th>
+                <th>from</th>
+                <th>to</th>
+                <th>model of transport</th>
+                <th>ticket</th>
+                <th>price</th>
+
+            </tr>
+            <tr>
+                {% for x in bookings[0] %}
+                <td>{{x['name']}}</td>
+                <td>{{x['age']}}</td>
+                <td>{{x['gender']}}</td>
+                <td>{{x['phone']}}</td>
+                <td>{{x['from_']}}</td>
+                <td>{{x['to_']}}</td>
+                <td>{{x['bus_name']}}</td>
+                <td>{{x['ticket']}}</td>
+                <td>{{x['total_price']}}</td>
+                {% endfor %}
+            </tr>
+
+        </tbody>
+
+    </table><br>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <h2> Flight Booking Details</h2>
+            </tr>
+           
+        </thead>
+        <tr class="bg-primary">
+            <th>name</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>phone</th>
+            <th>from</th>
+            <th>to</th>
+            <th>model of transport</th>
+            <th>ticket</th>
+            <th>price</th>
+
+        </tr>
+        
+        <tr>
+            {% for i in booking1[0] %}
+            <td>{{i['name']}}</td>
+            <td>{{i['age']}}</td>
+            <td>{{i['gender']}}</td>
+            <td>{{i['phone']}}</td>
+            <td>{{i['from_']}}</td>
+            <td>{{i['to_']}}</td>
+            <td>{{i['flight_name']}}</td>
+            <td>{{i['ticket']}}</td>
+            <td>{{i['total_price']}}</td>
+            {% endfor %}
+        </tr>
+
+    </table><br>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <h2> train Booking Details</h2>
+            </tr>
+           
+        </thead>
+        <tr class="bg-info">
+            <th>name</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>phone</th>
+            <th>from</th>
+            <th>to</th>
+            <th>model of transport</th>
+            <th>ticket</th>
+            <th>price</th>
+
+        </tr>
+      
+        <tr>
+            {% for p in booking2[0] %}
+            <td>{{p['name']}}</td>
+            <td>{{p['age']}}</td>
+            <td>{{p['gender']}}</td>
+            <td>{{p['phone']}}</td>
+            <td>{{p['from_']}}</td>
+            <td>{{p['to_']}}</td>
+            <td>{{p['train_name']}}</td>
+            <td>{{p['ticket']}}</td>
+            <td>{{p['total_price']}}</td>
+            {% endfor %}
+        </tr>
+
+    </table>
+</div>
+
+
+{% endblock %}
